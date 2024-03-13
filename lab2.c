@@ -33,7 +33,10 @@ int menu()
     case 3:
         bai3();
         break;
-    case 4:
+        case 4:
+        bai4();
+        break;
+    case 5:
         break;
     default:
     printf("Vui long bam chon trong menu\n");
