@@ -157,11 +157,10 @@ int tien_dien()
     int soDien;
     float soTienDien;
 
-    // Nhập số điện tiêu thụ
     printf("Nhập số điện tiêu thụ: ");
     scanf("%d", &soDien);
 
-    // Xác định bậc thang điện
+  
     if (soDien <= 50)
     {
         soTienDien = soDien * 1.678;
