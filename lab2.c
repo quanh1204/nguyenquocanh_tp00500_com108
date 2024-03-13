@@ -80,8 +80,12 @@ int bai3()
 int bai4()
 {
     float toan, ly, hoa;
-    printf("Moi ban nhap diem cua mon Toan, Ly, Hoa\n");
-    scanf("%f%f%f", &toan, &ly, &hoa);
+    printf("Moi ban nhap diem cua mon Toan\n");
+    scanf("%f", &toan,);
+    printf("Moi ban nhap diem cua mon Ly\n");
+    scanf("%f", &ly,);
+   printf("Moi ban nhap diem cua mon Hoa\n");
+    scanf("%f", &hoa,);
     toan = toan * 3;
     ly = ly * 2;
     printf("diem trung binh %f", (toan + ly + hoa) / 6);
