@@ -8,7 +8,7 @@ int main()
 
 int menu()
 {
-    int chucnang;
+    int option;
 
     printf("+---------------------------------------------------+\n"
            "1. Chuong trinh 2 so\n"
@@ -19,9 +19,9 @@ int menu()
            "+---------------------------------------------------+\n"
            "Chon chuc nang: ");
 
-    scanf("%d", &chucnang);
+    scanf("%d", &option);
 
-    switch (chucnang)
+    switch (option)
     {
     case 1:
         bai1();
