@@ -59,7 +59,7 @@ int bai1()
     return 0;
 }
 
-int bai2()
+void bai2()
 {
     float dai, rong, chuVi, dienTich;
     printf("Moi ban nhap chieu dai va chieu rong cua hinh chu nhat\n");
@@ -70,7 +70,7 @@ int bai2()
     printf("dien tich cua hinh chu nhat la %f\n", dienTich);
     return 0;
 }
-int bai3()
+void bai3()
 {
     float banKinh, chuVi, dienTich, PI = 3.14;
     printf("Moi ban nhap ban kinh cua hinh tron \n");
@@ -80,7 +80,7 @@ int bai3()
     printf("Chu vi hinh tron la %f\n", chuVi);
     printf("Dien tich hinh tron la %f", dienTich);
 }
-int bai4()
+void bai4()
 {
     float toan, ly, hoa;
     printf("Moi ban nhap diem cua mon Toan\n");
