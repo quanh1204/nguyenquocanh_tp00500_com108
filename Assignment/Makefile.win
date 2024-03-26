@@ -1,0 +1,69 @@
+# Project: Assignment
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+RES      = Assignment_private.res
+OBJ      = main.o doi_Tien.o no_ngan_hang.o so_nguyen.o SoNguyenTo.o tienDien.o "Tinh\ tien\ quan\ karaoke.o" UCLN_BCNN.o vay_tien.o check.o so_chinh_phuong.o back.o more.o $(RES)
+LINKOBJ  = main.o doi_Tien.o no_ngan_hang.o so_nguyen.o SoNguyenTo.o tienDien.o "Tinh tien quan karaoke.o" UCLN_BCNN.o vay_tien.o check.o so_chinh_phuong.o back.o more.o $(RES)
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Assignment.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+doi_Tien.o: doi_Tien.c
+	$(CC) -c doi_Tien.c -o doi_Tien.o $(CFLAGS)
+
+no_ngan_hang.o: no_ngan_hang.c
+	$(CC) -c no_ngan_hang.c -o no_ngan_hang.o $(CFLAGS)
+
+so_nguyen.o: so_nguyen.c
+	$(CC) -c so_nguyen.c -o so_nguyen.o $(CFLAGS)
+
+SoNguyenTo.o: SoNguyenTo.c
+	$(CC) -c SoNguyenTo.c -o SoNguyenTo.o $(CFLAGS)
+
+tienDien.o: tienDien.c
+	$(CC) -c tienDien.c -o tienDien.o $(CFLAGS)
+
+"Tinh\ tien\ quan\ karaoke.o": Tinh\ tien\ quan\ karaoke.c
+	$(CC) -c "Tinh tien quan karaoke.c" -o "Tinh tien quan karaoke.o" $(CFLAGS)
+
+UCLN_BCNN.o: UCLN_BCNN.c
+	$(CC) -c UCLN_BCNN.c -o UCLN_BCNN.o $(CFLAGS)
+
+vay_tien.o: vay_tien.c
+	$(CC) -c vay_tien.c -o vay_tien.o $(CFLAGS)
+
+check.o: check.c
+	$(CC) -c check.c -o check.o $(CFLAGS)
+
+so_chinh_phuong.o: so_chinh_phuong.c
+	$(CC) -c so_chinh_phuong.c -o so_chinh_phuong.o $(CFLAGS)
+
+back.o: back.c
+	$(CC) -c back.c -o back.o $(CFLAGS)
+
+more.o: more.c
+	$(CC) -c more.c -o more.o $(CFLAGS)
+
+Assignment_private.res: Assignment_private.rc 
+	$(WINDRES) -i Assignment_private.rc --input-format=rc -o Assignment_private.res -O coff 
+
