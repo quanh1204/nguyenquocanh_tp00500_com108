@@ -1,0 +1,51 @@
+# Project: Lab2
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+RES      = Lab2_private.res
+OBJ      = main.o menu.o tong_hieu.o back.o hcn.o hinh_tron.o dtb.o $(RES)
+LINKOBJ  = main.o menu.o tong_hieu.o back.o hcn.o hinh_tron.o dtb.o $(RES)
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Lab2.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+menu.o: menu.c
+	$(CC) -c menu.c -o menu.o $(CFLAGS)
+
+tong_hieu.o: tong_hieu.c
+	$(CC) -c tong_hieu.c -o tong_hieu.o $(CFLAGS)
+
+back.o: back.c
+	$(CC) -c back.c -o back.o $(CFLAGS)
+
+hcn.o: hcn.c
+	$(CC) -c hcn.c -o hcn.o $(CFLAGS)
+
+hinh_tron.o: hinh_tron.c
+	$(CC) -c hinh_tron.c -o hinh_tron.o $(CFLAGS)
+
+dtb.o: dtb.c
+	$(CC) -c dtb.c -o dtb.o $(CFLAGS)
+
+Lab2_private.res: Lab2_private.rc 
+	$(WINDRES) -i Lab2_private.rc --input-format=rc -o Lab2_private.res -O coff 
+
